@@ -24,6 +24,7 @@ set -e
 DIST_CODENAME=$(lsb_release --codename | cut -f2)
 DATE=(date +%F_%T)
 UCARE_VERSION=(4.4.0)
+SLEEP=2
 
 # Checking if the user has run the script with "sudo" or not
 if [[ $EUID -ne 0 ]] ; then
@@ -59,9 +60,9 @@ function WELCOME_SCREEN {
 	echo "           https://www.paypal.me/cerebrux              "
 	echo "_______________________________________________________"
 	echo
-	echo " uCareSystem Core will start in 5 seconds... "
+	echo " uCareSystem Core will start in $SLEEP seconds... "
 
-	sleep 6
+	sleep $SLEEP
 }
 
 function MAINTENACE {
